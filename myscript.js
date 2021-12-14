@@ -33,52 +33,106 @@ const downCurrent=document.querySelector(".chevron");
 
  /* funzione di aumento ad orologio del contatore  */
 upCurrent.addEventListener("click", function(){
-    msCurrent++
-    for (i=0; i <items.length; i++){
-        const msbrightness = document.querySelectorAll(".slider-img")[i];
-        const msImgcontained = document.querySelectorAll(".img-contained")[i];
-        const mstitle = document.querySelectorAll(".title")[i];
-        const mstext = document.querySelectorAll(".text")[i];
-        const msprevbrightness = document.querySelectorAll(".slider-img")[i-1];
-        const msprevImgcontained = document.querySelectorAll(".img-contained")[i-1];
-        const msprevtitle = document.querySelectorAll(".title")[i-1];
-        const msprevtext = document.querySelectorAll(".text")[i-1];
-        if (i == msCurrent) {
-            msprevImgcontained.classList.add("hidden");
-            msprevtitle.classList.add("hidden");
-            msprevtext.classList.add("hidden");
-            msprevbrightness.classList.remove("current");
-            msImgcontained.classList.remove("hidden");
-            mstitle.classList.remove("hidden");
-            mstext.classList.remove("hidden");
-            msbrightness.classList.add("current");
-            i=items.length;
+    if (msCurrent==items.length-1){
+        msCurrent = 0;
+        for (i=0; i <items.length; i++){
+            const msbrightness = document.querySelectorAll(".slider-img")[i];
+            const msImgcontained = document.querySelectorAll(".img-contained")[i];
+            const mstitle = document.querySelectorAll(".title")[i];
+            const mstext = document.querySelectorAll(".text")[i];
+            const msprevbrightness = document.querySelectorAll(".slider-img")[items.length -1];
+            const msprevImgcontained = document.querySelectorAll(".img-contained")[items.length -1];
+            const msprevtitle = document.querySelectorAll(".title")[items.length -1];
+            const msprevtext = document.querySelectorAll(".text")[items.length -1];
+            if (i == msCurrent) {
+                msprevImgcontained.classList.add("hidden");
+                msprevtitle.classList.add("hidden");
+                msprevtext.classList.add("hidden");
+                msprevbrightness.classList.remove("current");
+                msImgcontained.classList.remove("hidden");
+                mstitle.classList.remove("hidden");
+                mstext.classList.remove("hidden");
+                msbrightness.classList.add("current");
+                i=items.length;
+            }
         }
     }
+    else {
+        msCurrent++
+        for (i=0; i <items.length; i++){
+            const msbrightness = document.querySelectorAll(".slider-img")[i];
+            const msImgcontained = document.querySelectorAll(".img-contained")[i];
+            const mstitle = document.querySelectorAll(".title")[i];
+            const mstext = document.querySelectorAll(".text")[i];
+            const msprevbrightness = document.querySelectorAll(".slider-img")[i-1];
+            const msprevImgcontained = document.querySelectorAll(".img-contained")[i-1];
+            const msprevtitle = document.querySelectorAll(".title")[i-1];
+            const msprevtext = document.querySelectorAll(".text")[i-1];
+            if (i == msCurrent) {
+                msprevImgcontained.classList.add("hidden");
+                msprevtitle.classList.add("hidden");
+                msprevtext.classList.add("hidden");
+                msprevbrightness.classList.remove("current");
+                msImgcontained.classList.remove("hidden");
+                mstitle.classList.remove("hidden");
+                mstext.classList.remove("hidden");
+                msbrightness.classList.add("current");
+                i=items.length;
+            }
+        }
+    }
+
 })
 
 /* funzione di decremento ad orologio del contatore  */
 downCurrent.addEventListener("click", function(){
-    msCurrent--
-    for (i=0; i <items.length; i++){
-        const msbrightness = document.querySelectorAll(".slider-img")[i];
-        const msImgcontained = document.querySelectorAll(".img-contained")[i];
-        const mstitle = document.querySelectorAll(".title")[i];
-        const mstext = document.querySelectorAll(".text")[i];
-        const msprevbrightness = document.querySelectorAll(".slider-img")[i+1];
-        const msprevImgcontained = document.querySelectorAll(".img-contained")[i+1];
-        const msprevtitle = document.querySelectorAll(".title")[i+1];
-        const msprevtext = document.querySelectorAll(".text")[i+1];
-        if (i == msCurrent) {
-            msprevImgcontained.classList.add("hidden");
-            msprevtitle.classList.add("hidden");
-            msprevtext.classList.add("hidden");
-            msprevbrightness.classList.remove("current");
-            msImgcontained.classList.remove("hidden");
-            mstitle.classList.remove("hidden");
-            mstext.classList.remove("hidden");
-            msbrightness.classList.add("current");
-            i=items.length;
+    if (msCurrent==0){
+        msCurrent = items.length-1;
+        for (i=0; i <items.length; i++){
+            const msbrightness = document.querySelectorAll(".slider-img")[i];
+            const msImgcontained = document.querySelectorAll(".img-contained")[i];
+            const mstitle = document.querySelectorAll(".title")[i];
+            const mstext = document.querySelectorAll(".text")[i];
+            const msprevbrightness = document.querySelectorAll(".slider-img")[0];
+            const msprevImgcontained = document.querySelectorAll(".img-contained")[0];
+            const msprevtitle = document.querySelectorAll(".title")[0];
+            const msprevtext = document.querySelectorAll(".text")[0];
+            if (i == msCurrent) {
+                msprevImgcontained.classList.add("hidden");
+                msprevtitle.classList.add("hidden");
+                msprevtext.classList.add("hidden");
+                msprevbrightness.classList.remove("current");
+                msImgcontained.classList.remove("hidden");
+                mstitle.classList.remove("hidden");
+                mstext.classList.remove("hidden");
+                msbrightness.classList.add("current");
+                i=items.length;
+            }
         }
     }
+    else{
+        msCurrent--
+        for (i=0; i <items.length; i++){
+            const msbrightness = document.querySelectorAll(".slider-img")[i];
+            const msImgcontained = document.querySelectorAll(".img-contained")[i];
+            const mstitle = document.querySelectorAll(".title")[i];
+            const mstext = document.querySelectorAll(".text")[i];
+            const msprevbrightness = document.querySelectorAll(".slider-img")[i+1];
+            const msprevImgcontained = document.querySelectorAll(".img-contained")[i+1];
+            const msprevtitle = document.querySelectorAll(".title")[i+1];
+            const msprevtext = document.querySelectorAll(".text")[i+1];
+            if (i == msCurrent) {
+                msprevImgcontained.classList.add("hidden");
+                msprevtitle.classList.add("hidden");
+                msprevtext.classList.add("hidden");
+                msprevbrightness.classList.remove("current");
+                msImgcontained.classList.remove("hidden");
+                mstitle.classList.remove("hidden");
+                mstext.classList.remove("hidden");
+                msbrightness.classList.add("current");
+                i=items.length;
+            }
+        }
+    }
+ 
 })

@@ -82,6 +82,3 @@ downCurrent.addEventListener("click", function(){
         }
     }
 })
-
-
-console.log(msCurrent)

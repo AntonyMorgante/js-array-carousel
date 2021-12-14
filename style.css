@@ -10,11 +10,12 @@ body{
 }
 
 .image-container{
+    position:relative;
     float:left;
     width:85%;
 }
 
-.image-container img{
+.img-contained{
     height: 400px;
     width: 100%;
     object-fit: fill;
@@ -24,11 +25,17 @@ body{
     color:white;
     font-size:20px;
     font-weight: bold;
+    position:absolute;
+    bottom:50px;
+    left:50px;
 }
 
 .image-container .text{
     color:white;
     font-size:15px;
+    position:absolute;
+    bottom:30px;
+    left:50px;
 }
 
 .slider{
@@ -52,6 +59,7 @@ body{
     border-radius:50%;
     text-align: center;
     line-height: 25px;
+    z-index:99;
 }
 
 .upper{
@@ -70,4 +78,8 @@ body{
 
 .current{
     filter:brightness(1);
+}
+
+.hidden{
+    display: none;
 }

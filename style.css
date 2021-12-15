@@ -9,13 +9,17 @@ body{
     margin:200px auto;
 }
 
-.image-container{
-    position:relative;
+.left-container{
     float:left;
     width:85%;
 }
 
-.img-contained{
+.image-container{
+    position:relative;
+    width:100%;
+}
+
+.image-container img{
     height: 400px;
     width: 100%;
     object-fit: fill;
